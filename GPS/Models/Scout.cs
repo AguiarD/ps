@@ -14,11 +14,15 @@ namespace GPS.Models
         //public virtual Jogador fk_jogador { get; set; }
 
         public int JogadorId { get; set; }
-        public virtual Jogador Jogadores { get; set; }
+        public virtual Jogador? Jogadores { get; set; }
 
-        public int Presenca { get; set; }
+        [Display(Name = "Presença")]
+        public bool Presente { get; set; }
         //public virtual Parametro fk_parametro { get; set; }
-        public string Resultado { get; set; }
+        
+        [Display(Name = "Resultado")]
+        public int ParametroId { get; set; }
+        public virtual Parametro? Parametros { get; set; }
         public int Ponto { get; set; }
         public int? Gol { get; set; }
         public int? Assistencia { get; set; }
@@ -29,10 +33,23 @@ namespace GPS.Models
         [Display(Name = "Inativo")]
         public DateTime? Inativo { get; set; }
 
-
-        public int ParametrosId { get; set; }
-        public virtual Parametro Parametros { get; set; }
-
         //Criar construtor para somar resultados
+
+        //public Scout(DateTime dataPartida, int id_jogador, /*bool presenca, int resultado,*/ int ponto, int gol, int assistencia, string? obs)
+        //{
+        //    for (int i = 1; i <= 10; i++)
+        //    {
+        //        this.DtPartida = dataPartida;
+        //        this.JogadorId = id_jogador;
+        //        this.Presente = /*presenca*/ true;
+        //        this.ParametroId = /*resultado*/ 3;
+        //        this.Ponto = ponto;
+        //        this.Gol = gol;
+        //        this.Assistencia = assistencia;
+        //        this.ObsScout = obs;
+        //    }
+
+        //}
+
     }
 }
