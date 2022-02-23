@@ -1,0 +1,47 @@
+﻿@model GPS.Models.Parametro
+
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<h1>Novo Parametro</h1>
+
+<h4>Preencha os dados abaixo</h4>
+<br />
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Voltar</a>
+</div>
+<hr />
+<br />
+<div class="row">
+    <div class="col-md">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DescParametro" class="control-label"></label>
+                <input asp-for="DescParametro" class="form-control" />
+                <span asp-validation-for="DescParametro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ponto" class="control-label"></label>
+                <input asp-for="Ponto" class="form-control" />
+                <span asp-validation-for="Ponto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inativo" class="control-label"></label>
+                <input asp-for="Inativo" class="form-control" />
+                <span asp-validation-for="Inativo" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

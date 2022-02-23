@@ -1,0 +1,53 @@
+﻿@model IEnumerable<GPS.Models.Jogador>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameJogador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mensalista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObsMensalista)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inativo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameJogador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mensalista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObsMensalista)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inativo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

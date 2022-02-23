@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "68e51bfd-55f0-4507-9d8d-d03345eb0b0b": {
+      "ProjectGuid": "68e51bfd-55f0-4507-9d8d-d03345eb0b0b",
+      "DisplayName": "GPS",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    },
+    "eda44f3e-15f9-43ef-b849-1a02e141ecf4": {
+      "ProjectGuid": "eda44f3e-15f9-43ef-b849-1a02e141ecf4",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
