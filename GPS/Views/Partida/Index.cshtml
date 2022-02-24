@@ -1,17 +1,20 @@
 ﻿@model GPS.Models.Partida
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Partida";
 }
 
-<h1>Create</h1>
+<h1>Nova partida</h1>
+<br />
 
-<h4>Scout</h4>
-<hr />
+<h4>Preencha os dados da partida</h4>
+<br />
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-primary">Voltar</a>
 </div>
+<hr />
+<br />
 
 <div class="row">
     <div class="col-md">
@@ -160,6 +163,16 @@
                                 <span asp-validation-for="GolsA10" class="text-danger"></span>
                             </div>
                         </div>
+                        <br />
+
+                        <div class="d-flex justify-content-around">
+                            <div class="col-md-6">
+                                <label hidden>Gols Time A</label>
+                            </div>
+                            <div class="col-md-2">
+                                <input disabled class="form-control" />
+                            </div>
+                        </div>
 @*                        <div class="form-group">
                             <label asp-for="Presente" class="control-label"></label>
                             <input asp-for="Presente" class="form-control" />
@@ -289,6 +302,16 @@
                                 <select asp-for="JogadorIdB10" class ="form-control" asp-items="ViewBag.JogadorIdB10">
                                     <option></option>
                                 </select>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="d-flex justify-content-around">
+                            <div class="col-md-2">
+                                <input disabled class="form-control" />
+                            </div>
+                            <div class="col-md-6">
+                                <label hidden>Gols Time B</label>
                             </div>
                         </div>
                     </div>
