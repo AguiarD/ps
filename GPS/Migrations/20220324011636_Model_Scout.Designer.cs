@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GPS.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20220223232051_CriandoClasseScout")]
-    partial class CriandoClasseScout
+    [Migration("20220324011636_Model_Scout")]
+    partial class Model_Scout
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -158,6 +158,10 @@ namespace GPS.Migrations
                     b.Property<int?>("Assistencia")
                         .HasColumnType("int");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("DtPartida")
                         .HasColumnType("datetime2");
 
@@ -176,11 +180,8 @@ namespace GPS.Migrations
                     b.Property<int>("ParametroId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Ponto")
+                    b.Property<int>("Presente")
                         .HasColumnType("int");
-
-                    b.Property<bool>("Presente")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -189,6 +190,15 @@ namespace GPS.Migrations
                     b.HasIndex("ParametroId");
 
                     b.ToTable("Scouts");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Scout");
+                });
+
+            modelBuilder.Entity("GPS.Models.Partida", b =>
+                {
+                    b.HasBaseType("GPS.Models.Scout");
+
+                    b.HasDiscriminator().HasValue("Partida");
                 });
 
             modelBuilder.Entity("GPS.Models.Lancamento", b =>

@@ -23,6 +23,8 @@ namespace GPS
             optionsBuilder.UseLazyLoadingProxies();
         }
 
+        public DbSet<GPS.Models.Partida> Partida { get; set; }
+
         /*protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Scout>()

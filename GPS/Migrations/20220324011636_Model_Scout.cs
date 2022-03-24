@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GPS.Migrations
 {
-    public partial class CriandoClasseScout : Migration
+    public partial class Model_Scout : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,13 +17,13 @@ namespace GPS.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DtPartida = table.Column<DateTime>(type: "datetime2", nullable: false),
                     JogadorId = table.Column<int>(type: "int", nullable: false),
-                    Presente = table.Column<bool>(type: "bit", nullable: false),
+                    Presente = table.Column<int>(type: "int", nullable: false),
                     ParametroId = table.Column<int>(type: "int", nullable: false),
-                    Ponto = table.Column<int>(type: "int", nullable: false),
                     Gol = table.Column<int>(type: "int", nullable: true),
                     Assistencia = table.Column<int>(type: "int", nullable: true),
                     ObsScout = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Inativo = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    Inativo = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -1,0 +1,69 @@
+﻿@model GPS.Models.Scout
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Scout</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="DtPartida" class="control-label"></label>
+                <input asp-for="DtPartida" class="form-control" />
+                <span asp-validation-for="DtPartida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JogadorId" class="control-label"></label>
+                <select asp-for="JogadorId" class="form-control" asp-items="ViewBag.JogadorId"></select>
+                <span asp-validation-for="JogadorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Presente" class="control-label"></label>
+                <input asp-for="Presente" class="form-control" />
+                <span asp-validation-for="Presente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParametroId" class="control-label"></label>
+                <select asp-for="ParametroId" class="form-control" asp-items="ViewBag.ParametroId"></select>
+                <span asp-validation-for="ParametroId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gol" class="control-label"></label>
+                <input asp-for="Gol" class="form-control" />
+                <span asp-validation-for="Gol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assistencia" class="control-label"></label>
+                <input asp-for="Assistencia" class="form-control" />
+                <span asp-validation-for="Assistencia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ObsScout" class="control-label"></label>
+                <input asp-for="ObsScout" class="form-control" />
+                <span asp-validation-for="ObsScout" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inativo" class="control-label"></label>
+                <input asp-for="Inativo" class="form-control" />
+                <span asp-validation-for="Inativo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
